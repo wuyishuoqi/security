@@ -16,6 +16,6 @@ public class MethodService {
     }
     @PreAuthorize("hasAnyRole('ADMIN','DBA','USER')")
     public String user(){
-        return "user";
+        return "hello user";
     }
 }

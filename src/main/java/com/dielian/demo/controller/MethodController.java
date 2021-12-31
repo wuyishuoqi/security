@@ -13,11 +13,15 @@ public class MethodController {
 
     @GetMapping("/test/admin")
     public String admin(){
-        return "methodService.admin()";
+        return methodService.admin();
     }
 
     @GetMapping("/test/user")
     public String user(){
-        return "methodService.user()";
+        return methodService.user();
+    }
+    @GetMapping("/test/dba")
+    public String dba(){
+        return methodService.dba();
     }
 }
