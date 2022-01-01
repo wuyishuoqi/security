@@ -1,6 +1,8 @@
 package com.dielian.demo.entity;
 
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,6 +15,7 @@ public class User implements UserDetails {
     private Integer id;
     private String username;
     private String password;
+    @Getter(value = AccessLevel.NONE)
     private Boolean enabled;
     private Boolean locked;
     private List<Role> roles;
