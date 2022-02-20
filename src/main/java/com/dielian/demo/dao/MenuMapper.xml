@@ -2,7 +2,7 @@
         PUBLIC " -//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
         <mapper namespace="com.dielian.demo.dao.MenuMapper">
-        <resultMap id=" BaseResultMap" type="com.dielian.demo.entity.Menu" >
+        <resultMap id="BaseResultMap" type="com.dielian.demo.entity.Menu" >
         <id property="id" column="id" />
         <result property="pattern" column="pattern"/>
         <collection property="roles" ofType="com.dielian.demo.entity.Role" >
@@ -13,6 +13,6 @@
         </resultMap>
         <select id="getAllMenus" resultMap="BaseResultMap">
         SELECT m.*,r.id AS rid,r.name AS rname, r.nameZh AS rnameZh FROM menu m LEFT
-        JOIN menu role mr ON m."id" = mr."mid" LEFT JOIN role r ON mr."rid" = r."id"
+        JOIN menu_role mr ON m.id = mr.mid LEFT JOIN role r ON mr.rid = r.id
         </select>
         </mapper>
